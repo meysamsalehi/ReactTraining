@@ -4,9 +4,12 @@ const App = () => {
   return (
     <div className="container" id="title">
       <h1>shopping App</h1>
-      <Product />
-      <Product />
-      <Product />
+      <Product name="react js" price="90$" />
+      <Product name="node js" price="70$" />
+      <Product name="java script" price="80$">
+        {" "}
+        15%{" "}
+      </Product>
     </div>
   );
 };
