@@ -10,6 +10,17 @@ class AppClass extends Component {
     ],
   };
 
+  clickHandler = () => {
+    this.setState({
+      products: [
+        { title: "react-js", price: "100$" },
+        { title: "js", price: "180$" },
+        { title: "node-js", price: "170$" },
+      ],
+    });
+    console.log("clicked");
+  };
+
   render() {
     return (
       <div className="container" id="title">
@@ -17,6 +28,7 @@ class AppClass extends Component {
         {this.state.products.map((product) => {
           return <Product name={product.title} price={product.price} />;
         })}
+        <button onClick={this.clickHandler}>change Price</button>
       </div>
     );
   }
