@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
 import HookCounter from "./Component/HookCounter/HookCounter";
+import HookObject from "./Component/HookObject/HookObject";
 import Product from "./Component/Product/Product";
 
 const App = () => {
@@ -27,8 +28,9 @@ const App = () => {
       })}
       <button onClick={clickHandler}>change Price</button>
 
-      <HookCounter />
-      <ClassCounter />
+      {/* <HookCounter />
+      <ClassCounter /> */}
+      <HookObject />
     </div>
   );
 };
