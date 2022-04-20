@@ -8,8 +8,13 @@ class AppClass extends Component {
       { title: "js", price: "80$" },
       { title: "node-js", price: "70$" },
     ],
+    count: 0,
   };
 
+  countHandler(id) {
+    console.log("clicked", id);
+    this.setState({ count: this.state.count + id });
+  }
   // clickHandler = () => {
   //   this.setState({
   //     products: [
@@ -36,6 +41,7 @@ class AppClass extends Component {
   constructor(props) {
     super(props);
     this.clickHandlerBind = this.clickHandlerBind.bind(this);
+    this.countHandler = this.countHandler.bind(this);
     this.setState({
       products: [
         { title: "react-js", price: "100$" },
@@ -53,6 +59,10 @@ class AppClass extends Component {
           return <Product name={product.title} price={product.price} />;
         })}
         <button onClick={this.clickHandlerBind}>change Price</button>
+
+        <button onClick={() => this.countHandler(1)}>
+          add counter {this.state.count}
+        </button>
       </div>
     );
   }
