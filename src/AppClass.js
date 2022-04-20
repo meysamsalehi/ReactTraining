@@ -10,7 +10,19 @@ class AppClass extends Component {
     ],
   };
 
-  clickHandler = () => {
+  // clickHandler = () => {
+  //   this.setState({
+  //     products: [
+  //       { title: "react-js", price: "100$" },
+  //       { title: "js", price: "180$" },
+  //       { title: "node-js", price: "170$" },
+  //     ],
+  //   });
+  //   console.log("clicked");
+  // };
+
+  // solve1
+  clickHandlerBind() {
     this.setState({
       products: [
         { title: "react-js", price: "100$" },
@@ -19,7 +31,19 @@ class AppClass extends Component {
       ],
     });
     console.log("clicked");
-  };
+  }
+
+  constructor(props) {
+    super(props);
+    this.clickHandlerBind = this.clickHandlerBind.bind(this);
+    this.setState({
+      products: [
+        { title: "react-js", price: "100$" },
+        { title: "js", price: "180$" },
+        { title: "node-js", price: "170$" },
+      ],
+    });
+  }
 
   render() {
     return (
@@ -28,7 +52,7 @@ class AppClass extends Component {
         {this.state.products.map((product) => {
           return <Product name={product.title} price={product.price} />;
         })}
-        <button onClick={this.clickHandler}>change Price</button>
+        <button onClick={this.clickHandlerBind}>change Price</button>
       </div>
     );
   }
