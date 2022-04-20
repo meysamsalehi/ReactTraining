@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
+import HookCounter from "./Component/HookCounter/HookCounter";
 import Product from "./Component/Product/Product";
 
 const App = () => {
@@ -24,6 +26,9 @@ const App = () => {
         return <Product name={product.title} price={product.price} />;
       })}
       <button onClick={clickHandler}>change Price</button>
+
+      <HookCounter />
+      <ClassCounter />
     </div>
   );
 };
