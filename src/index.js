@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import AppClass from "./AppClass";
 import App, { userName, lastName } from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -7,7 +8,7 @@ root.render(
   <React.StrictMode>
     <h2>{userName}</h2>
     <h2>{lastName}</h2>
-    <App />
+    <AppClass />
   </React.StrictMode>
 );
 
