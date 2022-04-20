@@ -7,9 +7,9 @@ import HookArray from "./Component/HookArray/HookArray";
 
 const App = () => {
   const [products, setProducts] = useState([
-    { title: "react-js", price: "90$" },
-    { title: "js", price: "80$" },
-    { title: "node-js", price: "70$" },
+    { title: "react-js", price: "90$", id: 1 },
+    { title: "js", price: "80$", id: 2 },
+    { title: "node-js", price: "70$", id: 3 },
   ]);
 
   const clickHandler = () => {
@@ -24,15 +24,31 @@ const App = () => {
   return (
     <div className="container" id="title">
       <h1>shopping App</h1>
+
+      {/* solve1 */}
       {products.map((product) => {
-        return <Product name={product.title} price={product.price} />;
+        return (
+          <Product
+            name={product.title}
+            price={product.price}
+            key={product.id}
+          />
+        );
       })}
+
+      {/* solve2 */}
+      {/* {products.map((product, index) => {
+        return (
+          <Product name={product.title} price={product.price} key={index} />
+        );
+      })} */}
+
       <button onClick={clickHandler}>change Price</button>
 
       {/* <HookCounter />
       <ClassCounter /> */}
       {/* <HookObject /> */}
-      <HookArray />
+      {/* <HookArray /> */}
     </div>
   );
 };
