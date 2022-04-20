@@ -2,16 +2,21 @@ import React, { Component } from "react";
 import Product from "./Component/Product/Product";
 
 class AppClass extends Component {
+  state = {
+    products: [
+      { title: "react-js", price: "90$" },
+      { title: "js", price: "80$" },
+      { title: "node-js", price: "70$" },
+    ],
+  };
+
   render() {
     return (
       <div className="container" id="title">
         <h1>shopping App</h1>
-        <Product name="react js" price="90$" />
-        <Product name="node js" price="70$" />
-        <Product name="java script" price="80$">
-          {" "}
-          15%{" "}
-        </Product>
+        {this.state.products.map((product) => {
+          return <Product name={product.title} price={product.price} />;
+        })}
       </div>
     );
   }
