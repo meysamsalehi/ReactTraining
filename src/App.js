@@ -4,6 +4,7 @@ import HookCounter from "./Component/HookCounter/HookCounter";
 import HookObject from "./Component/HookObject/HookObject";
 import Product from "./Component/Product/Product";
 import HookArray from "./Component/HookArray/HookArray";
+import "./App.css";
 
 const App = () => {
   const [products, setProducts] = useState([
