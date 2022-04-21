@@ -56,13 +56,19 @@ class AppClass extends Component {
       <div className="container" id="title">
         <h1>shopping App</h1>
         {this.state.products.map((product) => {
-          return <Product name={product.title} price={product.price} />;
+          return (
+            <Product
+              name={product.title}
+              price={product.price}
+              click={() => this.clickHandlerBind()}
+            />
+          );
         })}
-        <button onClick={this.clickHandlerBind}>change Price</button>
+        {/* <button onClick={this.clickHandlerBind}>change Price</button>
 
         <button onClick={() => this.countHandler(1)}>
           add counter {this.state.count}
-        </button>
+        </button> */}
       </div>
     );
   }
