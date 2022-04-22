@@ -34,3 +34,15 @@
   align-items: center;
   justify-content: center;
 }
+
+.input {
+  outline: none;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  padding: 5px;
+  color: #6d28d9;
+}
+
+.input:focus {
+  border: 2px solid #6d28d9;
+}

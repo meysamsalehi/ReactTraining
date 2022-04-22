@@ -2,7 +2,12 @@ import styles from "./Product.module.css";
 const Product = (props) => {
   return (
     <div className={styles.product}>
-      <p>product name : {props.product.name}</p>
+      <input
+        className={styles.input}
+        onChange={props.onChange}
+        value={props.product.title}
+      />
+      <p>product name : {props.product.title}</p>
       <p>product name : {props.product.price}</p>
       <p> discount is {props.product.children}</p>
       <button onClick={props.onDelete}>delete</button>
