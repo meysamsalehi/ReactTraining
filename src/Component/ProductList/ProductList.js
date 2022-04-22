@@ -21,6 +21,18 @@ class ProductList extends Component {
     this.setState({ products: productsClone });
   };
 
+  decrementHandler = (id) => {
+    const productsClone = [...this.state.products];
+    const selectedItem = productsClone.find((p) => p.id === id);
+    if (selectedItem.quantity === 1) {
+      const filteredProducts = this.state.products.filter((p) => p.id !== id);
+      this.setState({ products: filteredProducts });
+    } else {
+      selectedItem.quantity--;
+      this.setState({ products: productsClone });
+    }
+  };
+
   changeHandler = (event, id) => {
     const productsClone = [...this.state.products];
     const selectedItem = productsClone.find((p) => p.id === id);
@@ -40,6 +52,7 @@ class ProductList extends Component {
               product={product}
               onDelete={() => this.removeHandler(product.id)}
               onIncrement={() => this.incrementHandler(product.id)}
+              onDecrement={() => this.decrementHandler(product.id)}
               onChange={(e) => this.changeHandler(e, product.id)}
             />
           );

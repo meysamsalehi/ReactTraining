@@ -16,7 +16,10 @@ const Product = (props) => {
         onClick={props.onIncrement}
         className={`${styles.button} ${styles.inc}`}
       >
-        increment
+        +
+      </button>
+      <button onClick={props.onDecrement} className={styles.button}>
+        -
       </button>
     </div>
   );
