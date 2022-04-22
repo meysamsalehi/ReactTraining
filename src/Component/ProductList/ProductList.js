@@ -40,23 +40,30 @@ class ProductList extends Component {
     this.setState({ products: productsClone });
   };
 
+  renderProducts = () => {
+    if (this.state.products.length === 0)
+      return <div>در سبد خرید چیزی نیست</div>;
+    return this.state.products.map((product) => {
+      return (
+        <Product
+          // name={product.title}
+          // price={product.price}
+          // quantity={product.quantity}
+          product={product}
+          onDelete={() => this.removeHandler(product.id)}
+          onIncrement={() => this.incrementHandler(product.id)}
+          onDecrement={() => this.decrementHandler(product.id)}
+          onChange={(e) => this.changeHandler(e, product.id)}
+        />
+      );
+    });
+  };
+
   render() {
     return (
       <fragment>
-        {this.state.products.map((product) => {
-          return (
-            <Product
-              // name={product.title}
-              // price={product.price}
-              // quantity={product.quantity}
-              product={product}
-              onDelete={() => this.removeHandler(product.id)}
-              onIncrement={() => this.incrementHandler(product.id)}
-              onDecrement={() => this.decrementHandler(product.id)}
-              onChange={(e) => this.changeHandler(e, product.id)}
-            />
-          );
-        })}
+        {!this.state.products.length && <p> چیزی را اضافه کنید </p>}
+        {this.renderProducts()};
       </fragment>
     );
   }
