@@ -1,10 +1,36 @@
 .product {
-  border: 2px solid #ccc;
-  padding: 20px;
+  border: 1px solid rgb(223, 11, 11);
   border-radius: 10px;
-  box-shadow: 0 10px 80px rgba(0, 0, 0, 0.065);
+  padding: 20px 40px;
   display: flex;
   justify-content: space-around;
   width: 40rem;
   margin-top: 15px;
+  color: #444;
+}
+
+.button {
+  color: #6d28d9;
+  background-color: #fff;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.inc {
+  background-color: #ede9fe;
+}
+
+.value {
+  display: inline-block;
+  color: #6d28d9;
+  width: 20px;
+  height: 20px;
+  background-color: #ede9fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

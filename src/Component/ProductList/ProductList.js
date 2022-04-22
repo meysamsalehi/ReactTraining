@@ -3,9 +3,9 @@ import Product from "../Product/Product";
 class ProductList extends Component {
   state = {
     products: [
-      { title: "react-js", price: "90$", id: 1 },
-      { title: "js", price: "80$", id: 2 },
-      { title: "node-js", price: "70$", id: 3 },
+      { title: "react-js", price: "90$", id: 1, quantity: 1 },
+      { title: "js", price: "80$", id: 2, quantity: 1 },
+      { title: "node-js", price: "70$", id: 3, quantity: 1 },
     ],
   };
 
@@ -20,8 +20,10 @@ class ProductList extends Component {
         {this.state.products.map((product) => {
           return (
             <Product
-              name={product.title}
-              price={product.price}
+              // name={product.title}
+              // price={product.price}
+              // quantity={product.quantity}
+              product={product}
               onDelete={() => this.removeHandler(product.id)}
             />
           );
