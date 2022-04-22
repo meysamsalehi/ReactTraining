@@ -7,7 +7,12 @@ const Product = (props) => {
       <p> discount is {props.product.children}</p>
       <button onClick={props.onDelete}>delete</button>
       <span className={styles.value}>{props.product.quantity}</span>
-      <button className={`${styles.button} ${styles.inc}`}>increment</button>
+      <button
+        onClick={props.onIncrement}
+        className={`${styles.button} ${styles.inc}`}
+      >
+        increment
+      </button>
     </div>
   );
 };

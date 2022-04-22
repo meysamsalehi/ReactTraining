@@ -14,6 +14,13 @@ class ProductList extends Component {
     this.setState({ products: filteredProducts });
   };
 
+  incrementHandler = (id) => {
+    const productsClone = [...this.state.products];
+    const selectedItem = productsClone.find((p) => p.id === id);
+    selectedItem.quantity++;
+    this.setState({ products: productsClone });
+  };
+
   render() {
     return (
       <fragment>
@@ -25,6 +32,7 @@ class ProductList extends Component {
               // quantity={product.quantity}
               product={product}
               onDelete={() => this.removeHandler(product.id)}
+              onIncrement={() => this.incrementHandler(product.id)}
             />
           );
         })}
