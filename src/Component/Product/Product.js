@@ -19,7 +19,12 @@ const Product = (props) => {
       >
         +
       </button>
-      <button onClick={props.onDecrement} className={styles.button}>
+      <button
+        className={`${styles.button} ${
+          props.product.quantity === 1 && styles.remove
+        }`}
+        onClick={props.onDecrement}
+      >
         {props.product.quantity > 1 ? "-" : <BiTrash />}
       </button>
     </div>
