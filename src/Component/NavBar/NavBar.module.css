@@ -1,0 +1,28 @@
+.Navbar {
+  width: 100%;
+  background-color: rgb(214, 214, 214);
+  padding-top: 15px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Navbar h2 {
+  font-size: 16px;
+  color: #444;
+}
+
+.Navbar span {
+  margin-left: 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #d0c7f7;
+  color: #c300ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
