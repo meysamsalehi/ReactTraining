@@ -17,32 +17,48 @@ class AppClass extends Component {
   };
 
   incrementHandler = (id) => {
-    const productsClone = [...this.state.products];
-    const selectedItem = productsClone.find((p) => p.id === id);
-    selectedItem.quantity++;
-    this.setState({ products: productsClone });
+    const index = this.state.products.findIndex((p) => p.id === id);
+    const product = { ...this.state.products[index] };
+    product.quantity++;
+    const products = [...this.state.products];
+    products[index] = product;
+    this.setState({ products });
   };
 
   decrementHandler = (id) => {
-    const productsClone = [...this.state.products];
-    const selectedItem = productsClone.find((p) => p.id === id);
-    if (selectedItem.quantity === 1) {
+    const index = this.state.products.findIndex((p) => p.id === id);
+    const product = { ...this.state.products[index] };
+    if (product.quantity === 1) {
       const filteredProducts = this.state.products.filter((p) => p.id !== id);
       this.setState({ products: filteredProducts });
     } else {
-      selectedItem.quantity--;
-      this.setState({ products: productsClone });
+      product.quantity--;
+      const products = [...this.state.products];
+      products[index] = product;
+      this.setState({ products });
     }
   };
 
   changeHandler = (event, id) => {
-    const productsClone = [...this.state.products];
-    const selectedItem = productsClone.find((p) => p.id === id);
-    selectedItem.title = event.target.value;
-    this.setState({ products: productsClone });
+    const index = this.state.products.findIndex((p) => p.id === id);
+    const product = { ...this.state.products[index] };
+    product.title = event.target.value;
+    const products = [...this.state.products];
+    products[index] = product;
+    this.setState({ products });
   };
 
+  componentDidMount() {
+    console.log("mounting app");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("updating app");
+    console.log(prevState.products[0].quantity);
+  }
+
   render() {
+    console.log("rendering");
     return (
       <div className="container" id="title">
         <NavBar totalItems={this.state.products.length} />
