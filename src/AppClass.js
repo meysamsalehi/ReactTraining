@@ -3,6 +3,7 @@ import ClassTimer from "./Component/ClassTimer/ClassTimer";
 import NavBar from "./Component/NavBar/Navbar";
 import ProductList from "./Component/ProductList/ProductList";
 import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
+import Wrapper from "./Component/Wrapper/Wrapper";
 
 class AppClass extends Component {
   state = {
@@ -68,8 +69,8 @@ class AppClass extends Component {
   render() {
     // console.log("rendering");
     return (
-      <div className="container" id="title">
-        {/* <NavBar totalItems={this.state.products.length} />
+      <Wrapper class="container" id="title">
+        <NavBar totalItems={this.state.products.length} />
         <h1>shopping App</h1>
         <ProductList
           products={this.state.products}
@@ -77,12 +78,12 @@ class AppClass extends Component {
           onChange={this.changeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
-        /> */}
-        <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
+        />
+        {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "true"}
         </button>
-        {this.state.isShow && <FunctionalTimer />}
-      </div>
+        {this.state.isShow && <FunctionalTimer />} */}
+      </Wrapper>
     );
   }
 }
