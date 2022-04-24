@@ -69,7 +69,7 @@ class AppClass extends Component {
   render() {
     // console.log("rendering");
     return (
-      <Wrapper class="container" id="title">
+      <>
         <NavBar totalItems={this.state.products.length} />
         <h1>shopping App</h1>
         <ProductList
@@ -83,12 +83,12 @@ class AppClass extends Component {
           {this.state.isShow ? "hide" : "true"}
         </button>
         {this.state.isShow && <FunctionalTimer />} */}
-      </Wrapper>
+      </>
     );
   }
 }
 
-export default AppClass;
+export default Wrapper(AppClass, "container");
 
 export const userName = "meysam";
 export const lastName = "salehi";
