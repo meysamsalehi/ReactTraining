@@ -48,17 +48,22 @@ class AppClass extends Component {
     this.setState({ products });
   };
 
-  componentDidMount() {
-    console.log("mounting app");
-  }
+  // componentDidMount() {
+  //   console.log("mounting app");
+  // }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("updating app");
-    console.log(prevState.products[0].quantity);
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log("updating app");
+  //   console.log(prevState.products[0].quantity);
+  // }
+
+  // //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  // componentWillUnmount() {
+  //   console.log("unmounting app");
+  // }
 
   render() {
-    console.log("rendering");
+    // console.log("rendering");
     return (
       <div className="container" id="title">
         <NavBar totalItems={this.state.products.length} />
