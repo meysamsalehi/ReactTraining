@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import ClassTimer from "./Component/ClassTimer/ClassTimer";
 import NavBar from "./Component/NavBar/Navbar";
 import ProductList from "./Component/ProductList/ProductList";
+import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
 
 class AppClass extends Component {
   state = {
@@ -9,6 +11,7 @@ class AppClass extends Component {
       { title: "js", price: "80$", id: 2, quantity: 1 },
       { title: "node-js", price: "70$", id: 3, quantity: 1 },
     ],
+    isShow: true,
   };
 
   removeHandler = (id) => {
@@ -66,7 +69,7 @@ class AppClass extends Component {
     // console.log("rendering");
     return (
       <div className="container" id="title">
-        <NavBar totalItems={this.state.products.length} />
+        {/* <NavBar totalItems={this.state.products.length} />
         <h1>shopping App</h1>
         <ProductList
           products={this.state.products}
@@ -74,7 +77,11 @@ class AppClass extends Component {
           onChange={this.changeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
-        />
+        /> */}
+        <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
+          {this.state.isShow ? "hide" : "true"}
+        </button>
+        {this.state.isShow && <FunctionalTimer />}
       </div>
     );
   }

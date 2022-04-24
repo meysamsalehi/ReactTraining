@@ -12,9 +12,9 @@ root.render(
   <React.StrictMode>
     <h2>{userName}</h2>
     <h2>{lastName}</h2>
-    {/* <AppClass /> */}
+    <AppClass />
     {/* <ClassComponentLife /> */}
-    <FunctionalCounterLife />
+    {/* <FunctionalCounterLife /> */}
   </React.StrictMode>
 );
 
