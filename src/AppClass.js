@@ -4,6 +4,7 @@ import NavBar from "./Component/NavBar/Navbar";
 import ProductList from "./Component/ProductList/ProductList";
 import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
 import Wrapper from "./Component/Wrapper/Wrapper";
+import ParentComponent from "./Component/PureMemoCom/ParentComponent";
 
 class AppClass extends Component {
   state = {
@@ -79,6 +80,8 @@ class AppClass extends Component {
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
         />
+
+        <ParentComponent />
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "true"}
         </button>
