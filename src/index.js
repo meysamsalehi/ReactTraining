@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import FunctionalUseRefTest from "./Component/Ref/FunctionalUseRefTest";
 // import AppClass from "./AppClass";
 // import App, { userName, lastName } from "./App";
 import "./index.css";
@@ -7,7 +8,7 @@ import "./index.css";
 // import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
 // import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
 // import ClassRef from "./Component/Ref/ClassRef";
-import FunctionalRef from "./Component/Ref/FunctionalRef";
+// import FunctionalRef from "./Component/Ref/FunctionalRef";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,7 +20,9 @@ root.render(
     {/* <FunctionalCounterLife /> */}
     {/* <ClassRef />
      */}
-    <FunctionalRef />
+    {/* <FunctionalRef />
+     */}
+    <FunctionalUseRefTest />
   </React.StrictMode>
 );
 
