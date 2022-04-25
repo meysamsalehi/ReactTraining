@@ -5,6 +5,7 @@ import ProductList from "./Component/ProductList/ProductList";
 import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
 import Wrapper from "./Component/Wrapper/Wrapper";
 import ParentComponent from "./Component/PureMemoCom/ParentComponent";
+import ClassRef from "./Component/Ref/ClassRef";
 
 class AppClass extends Component {
   state = {

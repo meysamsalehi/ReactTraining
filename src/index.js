@@ -6,15 +6,17 @@ import "./index.css";
 import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
 import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
 import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
+import ClassRef from "./Component/Ref/ClassRef";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <h2>{userName}</h2>
     <h2>{lastName}</h2>
-    <AppClass />
+    {/* <AppClass /> */}
     {/* <ClassComponentLife /> */}
     {/* <FunctionalCounterLife /> */}
+    <ClassRef />
   </React.StrictMode>
 );
 
