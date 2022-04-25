@@ -72,7 +72,7 @@ class AppClass extends Component {
     // console.log("rendering");
     return (
       <>
-        <NavBar totalItems={this.state.products.length} />
+        {/* <NavBar totalItems={this.state.products.length} />
         <h1>shopping App</h1>
         <ProductList
           products={this.state.products}
@@ -80,9 +80,9 @@ class AppClass extends Component {
           onChange={this.changeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
-        />
+        /> */}
 
-        <ParentComponent />
+        {/* <ParentComponent /> */}
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "true"}
         </button>

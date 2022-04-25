@@ -1,22 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppClass from "./AppClass";
-import App, { userName, lastName } from "./App";
+// import AppClass from "./AppClass";
+// import App, { userName, lastName } from "./App";
 import "./index.css";
-import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
-import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
-import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
-import ClassRef from "./Component/Ref/ClassRef";
+// import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
+// import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
+// import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
+// import ClassRef from "./Component/Ref/ClassRef";
+import FunctionalRef from "./Component/Ref/FunctionalRef";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <h2>{userName}</h2>
-    <h2>{lastName}</h2>
+    {/* <h2>{userName}</h2> */}
+    {/* <h2>{lastName}</h2> */}
     {/* <AppClass /> */}
     {/* <ClassComponentLife /> */}
     {/* <FunctionalCounterLife /> */}
-    <ClassRef />
+    {/* <ClassRef />
+     */}
+    <FunctionalRef />
   </React.StrictMode>
 );
 
