@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import CounterProvider from "./Component/Context/CounterProvider";
 import CounterOne from "./Component/Context/CounterOne";
+import CountReducer from "./Component/Reducer/CountReducer";
 // import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
 // import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
 // import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
@@ -28,7 +29,8 @@ root.render(
 
     <CounterProvider>
       <p>wellcome</p>
-      <CounterOne />
+      {/* <CounterOne /> */}
+      <CountReducer />
     </CounterProvider>
   </React.StrictMode>
 );
