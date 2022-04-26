@@ -4,15 +4,14 @@ import { useContext } from "react";
 
 const CounterOne = () => {
   const count = useCount();
-  const setCount = useCountAction();
+  const { incrementHandler, addOneHandler, addFiveHandler } = useCountAction();
 
-  const addOneHandler = () => {
-    setCount(count + 2);
-  };
   return (
     <div>
       count is : {count}
       <button onClick={addOneHandler}>+1</button>
+      <button onClick={addFiveHandler}>+5</button>
+      <button onClick={incrementHandler}>-1</button>
     </div>
   );
 };
