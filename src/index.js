@@ -4,9 +4,11 @@ import ReactDOM from "react-dom/client";
 // import AppClass from "./AppClass";
 // import App, { userName, lastName } from "./App";
 import "./index.css";
-import CounterProvider from "./Component/Context/CounterProvider";
-import CounterOne from "./Component/Context/CounterOne";
-import CountReducer from "./Component/Reducer/CountReducer";
+// import CounterProvider from "./Component/Context/CounterProvider";
+// import CounterOne from "./Component/Context/CounterOne";
+// import CountReducer from "./Component/Reducer/CountReducer";
+// import AppClass from "./AppClass";
+import App from "./App";
 // import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
 // import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
 // import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
@@ -26,12 +28,12 @@ root.render(
     {/* <FunctionalRef />
      */}
     {/* <FunctionalUseRefTest /> */}
-
-    <CounterProvider>
+    {/* <CounterProvider>
       <p>wellcome</p>
       <CounterOne />
       {/* <CountReducer /> */}
-    </CounterProvider>
+    {/* </CounterProvider> */}
+    <App />
   </React.StrictMode>
 );
 
