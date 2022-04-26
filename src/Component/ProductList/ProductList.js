@@ -7,20 +7,21 @@ import Product from "./../Product/Product";
 
 const ProductList = (props) => {
   const products = useProducts();
-  let { removeHandler, incrementHandler, decrementHandler, changeHandler } =
-    useProductsAction();
+  const dispatch = useProductsAction();
 
   const renderProducts = () => {
-    if (products.length === 0) return <div>در سبد خرید چیزی نیست</div>;
+    if (products.length === 0) return <div>در سبد خرید چیزی هست؟</div>;
     return products.map((product) => {
       return (
         <Product
           key={product.id}
           product={product}
-          onDelete={() => removeHandler(product.id)}
-          onIncrement={() => incrementHandler(product.id)}
-          onDecrement={() => decrementHandler(product.id)}
-          onChange={(e) => changeHandler(e, product.id)}
+          onDelete={() => dispatch({ type: "remove", id: product.id })}
+          onIncrement={() => dispatch({ type: "increment", id: product.id })}
+          onDecrement={() => dispatch({ type: "decrement", id: product.id })}
+          onChange={(e) =>
+            dispatch({ type: "change", id: product.id, event: e })
+          }
         />
       );
     });
