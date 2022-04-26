@@ -7,6 +7,8 @@ import Wrapper from "./Component/Wrapper/Wrapper";
 import ParentComponent from "./Component/PureMemoCom/ParentComponent";
 import ClassRef from "./Component/Ref/ClassRef";
 
+export const UserContext = React.createContext();
+
 class AppClass extends Component {
   state = {
     products: [
@@ -71,23 +73,25 @@ class AppClass extends Component {
   render() {
     // console.log("rendering");
     return (
-      <>
-        {/* <NavBar totalItems={this.state.products.length} />
-        <h1>shopping App</h1>
-        <ProductList
-          products={this.state.products}
-          onDelete={this.removeHandler}
-          onChange={this.changeHandler}
-          onIncrement={this.incrementHandler}
-          onDecrement={this.decrementHandler}
-        /> */}
+      <div className="container">
+        <UserContext.Provider value="mmm">
+          <NavBar totalItems={this.state.products.length} />
+          <h1>shopping App</h1>
+          <ProductList
+            products={this.state.products}
+            onDelete={this.removeHandler}
+            onChange={this.changeHandler}
+            onIncrement={this.incrementHandler}
+            onDecrement={this.decrementHandler}
+          />
+        </UserContext.Provider>
 
         {/* <ParentComponent /> */}
         {/* <button onClick={() => this.setState({ isShow: !this.state.isShow })}>
           {this.state.isShow ? "hide" : "true"}
         </button>
         {this.state.isShow && <FunctionalTimer />} */}
-      </>
+      </div>
     );
   }
 }

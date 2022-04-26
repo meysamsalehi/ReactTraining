@@ -1,5 +1,6 @@
-import React, { Fragment, Component } from "react";
+import React, { Fragment, Component  } from "react";
 import Product from "../Product/Product";
+
 class ProductList extends Component {
   renderProducts = () => {
     let { onDelete, onChange, onIncrement, onDecrement, products } = this.props;

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import FunctionalUseRefTest from "./Component/Ref/FunctionalUseRefTest";
-// import AppClass from "./AppClass";
+import AppClass from "./AppClass";
 // import App, { userName, lastName } from "./App";
 import "./index.css";
 // import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
@@ -15,14 +15,14 @@ root.render(
   <React.StrictMode>
     {/* <h2>{userName}</h2> */}
     {/* <h2>{lastName}</h2> */}
-    {/* <AppClass /> */}
+    <AppClass />
     {/* <ClassComponentLife /> */}
     {/* <FunctionalCounterLife /> */}
     {/* <ClassRef />
      */}
     {/* <FunctionalRef />
      */}
-    <FunctionalUseRefTest />
+    {/* <FunctionalUseRefTest /> */}
   </React.StrictMode>
 );
 

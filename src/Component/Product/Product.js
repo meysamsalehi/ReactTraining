@@ -1,6 +1,7 @@
 import styles from "./Product.module.css";
 import { BiTrash } from "react-icons/bi";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { UserContext } from "../../AppClass";
 const Product = ({ product, onDelete, onChange, onIncrement, onDecrement }) => {
   // CWM , CWU + CWUM
   // useEffect(() => {
@@ -24,6 +25,9 @@ const Product = ({ product, onDelete, onChange, onIncrement, onDecrement }) => {
       return console.log("CWU");
     };
   }, []);
+
+  const user = useContext(UserContext);
+  console.log(user);
 
   return (
     <div className={styles.product}>
