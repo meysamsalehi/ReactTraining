@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import FunctionalUseRefTest from "./Component/Ref/FunctionalUseRefTest";
-import AppClass from "./AppClass";
+// import FunctionalUseRefTest from "./Component/Ref/FunctionalUseRefTest";
+// import AppClass from "./AppClass";
 // import App, { userName, lastName } from "./App";
 import "./index.css";
+import CounterProvider from "./Component/Context/CounterProvider";
+import CounterOne from "./Component/Context/CounterOne";
 // import ClassCounter from "./Component/ClassCounter.js/ClassCounter";
 // import ClassComponentLife from "./Component/ClassCounterLife/ClassComponentLife";
 // import FunctionalCounterLife from "./Component/FunctionalCounterLife/FunctionalCounterLife";
@@ -15,7 +17,7 @@ root.render(
   <React.StrictMode>
     {/* <h2>{userName}</h2> */}
     {/* <h2>{lastName}</h2> */}
-    <AppClass />
+    {/* <AppClass /> */}
     {/* <ClassComponentLife /> */}
     {/* <FunctionalCounterLife /> */}
     {/* <ClassRef />
@@ -23,6 +25,11 @@ root.render(
     {/* <FunctionalRef />
      */}
     {/* <FunctionalUseRefTest /> */}
+
+    <CounterProvider>
+      <p>wellcome</p>
+      <CounterOne />
+    </CounterProvider>
   </React.StrictMode>
 );
 
