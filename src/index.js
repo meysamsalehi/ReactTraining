@@ -29,8 +29,8 @@ root.render(
 
     <CounterProvider>
       <p>wellcome</p>
-      {/* <CounterOne /> */}
-      <CountReducer />
+      <CounterOne />
+      {/* <CountReducer /> */}
     </CounterProvider>
   </React.StrictMode>
 );
