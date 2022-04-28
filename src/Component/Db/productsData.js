@@ -94,7 +94,7 @@ export const productsData = [
     title: "Crazy Monkey Grey",
     quantity: 1,
     description: "",
-    availableSizes: ["L", "XL"],
+    availableSizes: ["L", "XL", ["S"]],
     price: 134.9,
     isFreeShipping: true,
   },

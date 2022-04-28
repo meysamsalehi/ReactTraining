@@ -38,8 +38,16 @@ const reducer = (state, action) => {
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts;
     case "filter":
-      alert(action.event.target.value);
-      return state;
+      if (action.event.target.value == "") {
+        return productsData;
+      } else {
+        const filteredSizeProduct = productsData.filter(
+          (p) => p.availableSizes.indexOf(action.event.target.value) >= 0
+        );
+
+        return filteredSizeProduct;
+      }
+
     default:
       return state;
   }
