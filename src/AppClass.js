@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import ClassTimer from "./Component/ClassTimer/ClassTimer";
+// import ClassTimer from "./Component/ClassTimer/ClassTimer";
 import NavBar from "./Component/NavBar/Navbar";
 import ProductList from "./Component/ProductList/ProductList";
-import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
+// import FunctionalTimer from "./Component/FunctionalTimer/FunctionalTimer";
 import Wrapper from "./Component/Wrapper/Wrapper";
-import ParentComponent from "./Component/PureMemoCom/ParentComponent";
-import ClassRef from "./Component/Ref/ClassRef";
+// import ParentComponent from "./Component/PureMemoCom/ParentComponent";
+// import ClassRef from "./Component/Ref/ClassRef";
 
 export const UserContext = React.createContext();
 

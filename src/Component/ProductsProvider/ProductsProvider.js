@@ -37,6 +37,9 @@ const reducer = (state, action) => {
     case "remove":
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts;
+    case "filter":
+      alert(action.event.target.value);
+      return state;
     default:
       return state;
   }
