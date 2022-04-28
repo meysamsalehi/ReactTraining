@@ -1,12 +1,10 @@
 import React, { useReducer, useContext } from "react";
+import { productsData } from "../Db/productsData";
+
 const ProductsContext = React.createContext(); //state
 const ProductsContextDispatcher = React.createContext(); //setState
 
-const initialState = [
-  { title: "react-js", price: "90$", id: 1, quantity: 1 },
-  { title: "js", price: "80$", id: 2, quantity: 1 },
-  { title: "node-js", price: "70$", id: 3, quantity: 1 },
-];
+const initialState = productsData;
 
 const reducer = (state, action) => {
   switch (action.type) {
