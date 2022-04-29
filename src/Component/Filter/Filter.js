@@ -1,31 +1,23 @@
 import { useProductsAction } from "../ProductsProvider/ProductsProvider";
-import { useState, useEffect } from "react";
-import Select from "react-select";
+import { useState } from "react";
+import SelectComponent from "../../common/SelectComponent/SelectComponent";
 import Styles from "./Filter.module.css";
 
 const Filter = () => {
   const dispatch = useProductsAction();
   const [value, setValue] = useState("");
-  const [sort, setSort] = useState("Lowest");
-
-  useEffect(() => {
-    dispatch({
-      type: "sort",
-      SelectedOption: { value: "Lowest" },
-    });
-  }, []);
-
-  const changeHandler = (SelectedOption) => {
-    console.log(SelectedOption);
-    dispatch({ type: "filter", SelectedOption: SelectedOption });
-    dispatch({ type: "sort", SelectedOption: { value: sort } });
-    setValue(SelectedOption);
-  };
+  const [sort, setSort] = useState("");
 
   const sortHandler = (SelectedOption) => {
-    console.log(SelectedOption);
+    console.log("ghabl", sort);
     dispatch({ type: "sort", SelectedOption: SelectedOption });
     setSort(SelectedOption);
+  };
+
+  const changeHandler = (SelectedOption) => {
+    dispatch({ type: "filterChangeHandler", SelectedOption: SelectedOption });
+    dispatch({ type: "sort", SelectedOption: sort });
+    setValue(SelectedOption);
   };
 
   const options = [
@@ -45,26 +37,19 @@ const Filter = () => {
 
   return (
     <div className={Styles.filter}>
-      <p> filter product by:</p>
-      <div className={Styles.selectContainer}>
-        <span> orderby:</span>
-        <Select
-          value={value}
-          onChange={changeHandler}
-          options={options}
-          className={Styles.select}
-        />
-      </div>
-      <p> filter sort by:</p>
-      <div className={Styles.selectContainer}>
-        <span> orderby:</span>
-        <Select
-          value={sort}
-          onChange={sortHandler}
-          options={sortOptions}
-          className={Styles.select}
-        />
-      </div>
+      <SelectComponent
+        value={value}
+        onChange={changeHandler}
+        options={options}
+        title="filter"
+      />
+      <SelectComponent
+        value={sort}
+        onChange={sortHandler}
+        options={sortOptions}
+        title="sort"
+      />
+      <h2>salam {sort.value}</h2>
     </div>
   );
 };

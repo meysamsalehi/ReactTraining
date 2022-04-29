@@ -37,10 +37,12 @@ const reducer = (state, action) => {
     case "remove":
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts;
-    case "filter": {
+    case "filterChangeHandler": {
+      console.log("state is", state);
       if (action.SelectedOption.value == "") {
         return productsData;
       } else {
+        console.log(action.SelectedOption.value);
         const updatedProduct = productsData.filter(
           (p) => p.availableSizes.indexOf(action.SelectedOption.value) >= 0
         );
@@ -50,7 +52,6 @@ const reducer = (state, action) => {
 
     case "sort": {
       const value = action.SelectedOption.value;
-      // alert(value);
       const product = [...state];
       if (value == "Lowest") {
         return _.orderBy(product, ["price"], ["asc"]);
@@ -60,13 +61,14 @@ const reducer = (state, action) => {
     }
 
     case "search": {
-      if (action.event.target.value == "") {
+      const value = action.event.target.value;
+      console.log("value search", value);
+      if (value == "") {
         return productsData;
       } else {
-        const updatedProduct = productsData.filter(
-          (p) => p.title.toLowerCase().includes(action.event.target.value.toLowerCase())
+        return productsData.filter((p) =>
+          p.title.toLowerCase().includes(value.toLowerCase())
         );
-        return updatedProduct;
       }
     }
 
