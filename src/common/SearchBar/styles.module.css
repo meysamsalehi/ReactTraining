@@ -1,0 +1,12 @@
+.formControl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formControl input {
+  padding: 0.3rem 1rem;
+  border-radius: 0.2rem;
+  margin: 0.4em 0.4rem;
+  width: 200px;
+}
