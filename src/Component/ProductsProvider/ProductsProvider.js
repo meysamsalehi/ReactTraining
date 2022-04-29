@@ -59,6 +59,17 @@ const reducer = (state, action) => {
       }
     }
 
+    case "search": {
+      if (action.event.target.value == "") {
+        return productsData;
+      } else {
+        const updatedProduct = productsData.filter(
+          (p) => p.title.toLowerCase().includes(action.event.target.value.toLowerCase())
+        );
+        return updatedProduct;
+      }
+    }
+
     default:
       return state;
   }
